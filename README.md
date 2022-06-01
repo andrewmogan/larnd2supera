@@ -1,4 +1,6 @@
-# edep2supera
+# larnd2supera
+
+TODO: This repository is copied from [edep2supera](https://github.com/DeepLearnPhysics/edep2supera). The intention is to adapt this framework to accept input from [larnd-sim](https://github.com/DUNE/larnd-sim) instead of [edep-sim](https://github.com/ClarkMcGrew/edep-sim). This will allow for the larnd-sim detector simulation to be implemented in the full simulation and machine learning reconstruction chain for the DUNE experiment. Multiple references to edep-sim and the original repository are present and will eventually need to be updated. 
 
 C++/Python software to run `Supera` ([repository](https://github.com/DeepLearnPhysics/SuperaAtomic)), a library that can generate true labels for a ML based data reconstruction chain called `lartpc_mlreco3d` ([repository](https://github.com/DeepLearnPhysics/lartpc_mlreco3d)). This repository is dedicated to interface [EDepSim](https://github.com/ClarkMcGrew/edep-sim) and [larcv](https://github.com/DeepLearnPhysics/larcv2) frameworks that input and output information in data files respectively. 
 

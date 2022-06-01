@@ -4,12 +4,12 @@ import ROOT,os
 import supera
 ROOT.gSystem.Load(os.path.join(supera.get_lib_dir(),'libsupera.so'))
 
-# Now load edep2supera library
+# Now load larnd2supera library
 lib_path = os.path.dirname(__file__) + "/lib/"
 inc_path = os.path.dirname(__file__) + "/include/"
-ROOT.gSystem.Load(os.path.join(lib_path,'libedep2supera.so'))
+ROOT.gSystem.Load(os.path.join(lib_path,'liblarnd2supera.so'))
 
-from ROOT import edep2supera
+from ROOT import larnd2supera
 
 def get_includes():
     return inc_path
