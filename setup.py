@@ -7,7 +7,7 @@ with io.open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name="larnsim2supera",
+    name="larnd2supera",
     version="0.0.1",
     cmake_source_dir='src/',
     include_package_data=True,
