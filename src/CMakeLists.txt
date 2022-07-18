@@ -6,14 +6,15 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O3 -g")
 
 
-project(edep2supera)
+project(larnd2supera)
 
-set(CMAKE_PACKAGE_DIR "edep2supera")
+#set(CMAKE_PACKAGE_DIR "larnd2supera")
+set(CMAKE_PACKAGE_DIR "/sdf/home/a/amogan/.local/bin/larnd2supera/")
 set(PROJECT_SOURCE_DIR "./")
 
 include_directories("./")
 
-message("    Configuring edep2supera build")
+message("    Configuring larnd2supera build")
 
 add_definitions(-DBUILD_PYTHON_BINDINGS)
 #########
@@ -21,11 +22,11 @@ add_definitions(-DBUILD_PYTHON_BINDINGS)
 #########
 find_package(PythonLibs REQUIRED)
 message("    Adding Python")
-message("    INCLUDE: ", ${PYTHON_INCLUDE_DIRS})
+message("    INCLUDE: " ${PYTHON_INCLUDE_DIRS})
 include_directories(${PYTHON_INCLUDE_DIRS})
 
 if(NOT PYTHON_EXECUTABLE)
-    message( FATAL_ERROR "PYTHON_EXECUTABLE not found. Cannot build edep2supera...")
+    message( FATAL_ERROR "PYTHON_EXECUTABLE not found. Cannot build larnd2supera...")
 endif()
 
 ########
@@ -47,7 +48,7 @@ find_path(PYTHON_NUMPY_INCLUDE_DIR numpy/arrayobject.h
 if(PYTHON_NUMPY_INCLUDE_DIR)
     set(PYTHON_NUMPY_FOUND 1 CACHE INTERNAL "Python numpy found")
 else()
-    message( FATAL_ERROR "Numpy could not be located. Cannot build edep2supera...")
+    message( FATAL_ERROR "Numpy could not be located. Cannot build larnd2supera...")
 endif()
 
 message("    Adding Numpy")
@@ -62,7 +63,7 @@ find_package(ROOT REQUIRED
 if(ROOT_FOUND)
   include(${ROOT_USE_FILE})
 else()
-  message( FATAL_ERROR "ROOT is needed but not found. Cannot build edep2supera...")
+  message( FATAL_ERROR "ROOT is needed but not found. Cannot build larnd2supera...")
 endif(ROOT_FOUND)
 
 ##########
@@ -74,7 +75,7 @@ if(EDepSim_FOUND)
   set(EDepSim_DIR "${EDepSim_DIR}/../../../")
   include_directories(${EDepSim_DIR}/include)
 else()
-  message( FATAL_ERROR "EDepSim is needed but not found. Cannot build edep2supera...")
+  message( FATAL_ERROR "EDepSim is needed but not found. Cannot build larnd2supera...")
 endif(EDepSim_FOUND)
 
 #########
@@ -119,4 +120,4 @@ include_directories(${SUPERA_INCLUDE_DIR})
 #message("    LIB:     " ${LARCV_LIB_DIR}    )
 #include_directories(${LARCV_INCLUDE_DIR})
 
-add_subdirectory(edep2supera)
+add_subdirectory(larnd2supera)
