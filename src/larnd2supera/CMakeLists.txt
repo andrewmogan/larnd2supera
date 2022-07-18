@@ -1,4 +1,4 @@
-set(name edep2supera)
+set(name larnd2supera)
 
 # Get all the source/header files:
 file(GLOB SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cxx)
@@ -7,16 +7,16 @@ list(REMOVE_ITEM HEADERS "LinkDef.h")
 
 # Generate dictionary
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-ROOT_GENERATE_DICTIONARY(G__edep2supera
+ROOT_GENERATE_DICTIONARY(G__larnd2supera
   ${HEADERS}
   #OPTIONS -inlineInputHeader
   LINKDEF LinkDef.h)
 
 # Build the library.
-add_library(edep2supera SHARED ${SOURCES} G__edep2supera.cxx)
+add_library(larnd2supera SHARED ${SOURCES} G__larnd2supera.cxx)
 
 # Link libraries
-target_link_libraries(edep2supera
+target_link_libraries(larnd2supera
     ${PYTHON_LIBRARIES}
     ${ROOT_LIBRARIES}
     -L${EDepSim_DIR}/lib -ledepsim_io
@@ -24,7 +24,7 @@ target_link_libraries(edep2supera
 )
 
 # Install
-install(TARGETS edep2supera
+install(TARGETS larnd2supera
     LIBRARY DESTINATION ${CMAKE_PACKAGE_DIR}/lib
     ARCHIVE DESTINATION ${CMAKE_PACKAGE_DIR}/lib
     RUNTIME DESTINATION ${CMAKE_PACKAGE_DIR}/bin
@@ -32,6 +32,6 @@ install(TARGETS edep2supera
     )
 
 install (FILES ${HEADERS}
-    DESTINATION ${CMAKE_PACKAGE_DIR}/include/edep2supera/${name})
+    DESTINATION ${CMAKE_PACKAGE_DIR}/include/larnd2supera/${name})
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libedep2supera_rdict.pcm DESTINATION ${CMAKE_PACKAGE_DIR}/lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/liblarnd2supera_rdict.pcm DESTINATION ${CMAKE_PACKAGE_DIR}/lib)

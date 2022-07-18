@@ -21,7 +21,6 @@ setup(
     #license='MIT',
     keywords='supera larndsim larnd larcv larcv3 neutrinos deep learning lartpc_mlreco3d',
     project_urls={
-        #'Source Code': 'https://github.com/DeepLearnPhysics/larnsim2supera'
         'Source Code': 'https://github.com/andrewmogan/larnd2supera'
     },
     #url='https://github.com/DeepLearnPhysics/edep2supera',
